@@ -1,0 +1,49 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Jogador_de_Futebol {
+    - nome: String
+    - idade: int
+    - altura: double
+    - peso: double
+    - clube: String
+    + Jogador_de_Futebol(nome: String, idade: int, altura: double, peso: double, clube: String)
+    + transferirClube(novoClube: String): void
+    + getNome(): String
+    + setNome(nome: String): void
+    + getIdade(): int
+    + setIdade(idade: int): void
+    + getAltura(): double
+    + setAltura(altura: double): void
+    + getPeso(): double
+    + setPeso(peso: double): void
+    + getClube(): String
+    + setClube(clube: String): void
+    + toString(): String
+}
+
+class GerenciadorJogadores {
+    - listaJogadores: List<Jogador_de_Futebol>
+    + adicionarJogador(jogador: Jogador_de_Futebol): void
+    + getListaJogadores(): List<Jogador_de_Futebol>
+}
+
+class SistemaGestaoJogadores {
+    + {static} main(args: String[]): void
+}
+
+class TransferenciaInvalidaException {
+    + TransferenciaInvalidaException(mensagem: String)
+}
+
+class Exception {
+}
+
+' Relacionamentos
+GerenciadorJogadores "1" --> "*" Jogador_de_Futebol : gerencia >
+SistemaGestaoJogadores ..> GerenciadorJogadores : usa
+SistemaGestaoJogadores ..> Jogador_de_Futebol : usa
+TransferenciaInvalidaException --|> Exception
+Jogador_de_Futebol ..> TransferenciaInvalidaException : lança
+
+@endum
