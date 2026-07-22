@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DrogariaMariaVitoria">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/DrogariaMariaVitoria.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
